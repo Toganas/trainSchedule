@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Schedule</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                Trains
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form id="trainForm">
+                    <div class="form-group">
+                        <label>Train Name</label>
+                        <input type="text"class="form-control" name="trainName">
+                    </div>
+                    <div class="form-group">
+                        <label>Destination</label>
+                        <input type="text"class="form-control" name="destination">
+                    </div>
+                    <div class="form-group">
+                        <label>First Train Time (HH:mm - military time)</label>
+                        <input type="text"class="form-control" name="firstTrain">
+                    </div>
+                    <div class="form-group">
+                        <label>Frequency(min)</label>
+                        <input type="text" class="form-control" name="frequency">
+                    </div>
+
+
+
+
+                    <button type="submit">Submit</button>
+                </form>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+    <!-- Specific Firebase products we want -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- custom javascript -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
