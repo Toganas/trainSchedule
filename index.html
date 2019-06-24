@@ -15,10 +15,32 @@
 
 <body>
 
-    <div class="container">
+    <div class="container" id="trainSchedule">
         <div class="row">
             <div class="col-12">
-                Trains
+                Train Schedule
+            </div>
+        </div>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency (min)</th>
+                    <th scope="col">Next Arrival</th>
+                    <th scope="col">Minutes Away</th>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+
+
+    <div class="container" id="addTrains">
+        <div class="row">
+            <div class="col-12">
+                Add Trains
             </div>
         </div>
         <div class="row">
@@ -26,15 +48,15 @@
                 <form id="trainForm">
                     <div class="form-group">
                         <label>Train Name</label>
-                        <input type="text"class="form-control" name="trainName">
+                        <input type="text" class="form-control" name="trainName">
                     </div>
                     <div class="form-group">
                         <label>Destination</label>
-                        <input type="text"class="form-control" name="destination">
+                        <input type="text" class="form-control" name="destination">
                     </div>
                     <div class="form-group">
                         <label>First Train Time (HH:mm - military time)</label>
-                        <input type="text"class="form-control" name="firstTrain">
+                        <input type="text" class="form-control" name="firstTrain">
                     </div>
                     <div class="form-group">
                         <label>Frequency(min)</label>
@@ -44,7 +66,7 @@
 
 
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="submit">Submit</button>
                 </form>
 
 
