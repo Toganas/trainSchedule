@@ -70,7 +70,6 @@ $("#trainForm").on("submit", function (event) {
 
 
 database.ref().on('child_added', function (response) {
-    $("#schedule").empty()
     console.log(response.val())
     var name = (response.val().name)
     console.log(name);
@@ -79,15 +78,15 @@ database.ref().on('child_added', function (response) {
     var frequency = (response.val().frequency)
     console.log(frequency);
     
-    // for (var i = 0; i < response.val().length; i++) {
-        
-        $("#schedule").html(`
-        <tr>
-        <th scope="row">${name}</th>
-        <td>${destination}</td>
-        <td>${frequency}</td>
-        </tr>
-     `)
+    for (var i = 0; i < database.ref().length; i++) {
+        console.log(response[i].val.name);
+        // $("#schedule").html(`
+        // <tr>
+        // <th scope="row">${name}</th>
+        // <td>${destination}</td>
+        // <td>${frequency}</td>
+        // </tr>
+    //  `)
     // }
     //use moment js to calculate arrival 
 
@@ -95,4 +94,4 @@ database.ref().on('child_added', function (response) {
     //tr
     //td 
     //empty-div
-})
+}})

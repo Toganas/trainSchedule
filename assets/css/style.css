@@ -3,8 +3,9 @@ body{
 }
 
 #addTrains{
-    background: white;
+    background:  #FFE7A1;
     border-radius: 1rem;
+    color: #4D5FB3
 }
 
 #submit{
@@ -12,6 +13,7 @@ body{
 }
 
 #trainSchedule{
-    background: lightgray;
+    background: #4D5FB3;
     border-radius: 1rem;
+    color: #FFE7A1;
 }
