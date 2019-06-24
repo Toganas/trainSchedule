@@ -27,8 +27,8 @@ $("#trainForm").on("submit", function (event) {
     // var matchTime = trainTime.match(regexTime);
     var trainName;
     var destination;
-    var firstTrain; 
-    var frequency; 
+    var firstTrain;
+    var frequency;
 
     if ($("#trainForm input[name=trainName]").val().trim().length > 2) {
 
@@ -42,26 +42,26 @@ $("#trainForm").on("submit", function (event) {
     else {
         alert("Destination should be 3 letters or more")
     }
-    if (trainTime != "" && !trainTime.match(regexTime)){
+    if (trainTime != "" && !trainTime.match(regexTime)) {
         alert("Time must be in hh:mm")
-      
+
     }
     else {
         firstTrain = trainTime;
     }
-    if (isNaN($("#trainForm input[name=frequency]").val().trim())){
+    if (isNaN($("#trainForm input[name=frequency]").val().trim())) {
         alert("Frequency must be a number")
     }
-    else{
+    else {
         frequency = $("#trainForm input[name=frequency]").val().trim()
     }
-    
+
 
     var trainInfo = {
-        name : trainName,
-        destination : destination,
-        first : firstTrain,
-        frequency : frequency
+        name: trainName,
+        destination: destination,
+        first: firstTrain,
+        frequency: frequency
     }
 
     database.ref().push(trainInfo)
@@ -69,10 +69,26 @@ $("#trainForm").on("submit", function (event) {
 
 
 
-database.ref().on('child_added', function(response){
-    console.log(response.val().name)
-
-
+database.ref().on('child_added', function (response) {
+    $("#schedule").empty()
+    console.log(response.val())
+    var name = (response.val().name)
+    console.log(name);
+    var destination = (response.val().destination)
+    console.log(destination);
+    var frequency = (response.val().frequency)
+    console.log(frequency);
+    
+    // for (var i = 0; i < response.val().length; i++) {
+        
+        $("#schedule").html(`
+        <tr>
+        <th scope="row">${name}</th>
+        <td>${destination}</td>
+        <td>${frequency}</td>
+        </tr>
+     `)
+    // }
     //use moment js to calculate arrival 
 
     //table
