@@ -1,49 +1,45 @@
 @font-face {
-    font-family: "coal_train";
-    src: url("../font/CoalTrain.ttf") format("truetype");
+  font-family: "coal_train";
+  src: url("../font/CoalTrain.ttf") format("truetype");
 }
-
-
-body{
-    background-image: url("../images/train-background-1.jpg");
+body {
+  background-image: url("../images/train-background-1.jpg");
 }
-
-#addTrains{
-    font-family: "coal_train","Times New Roman", Times, serif;
-    background:  #FFE7A1;
-    border-radius: 1rem;
-    color: #4D5FB3
+#addTrains {
+  font-family: "coal_train", "Times New Roman", Times, serif;
+  background: #ffe7a1;
+  border-radius: 1rem;
+  color: #4d5fb3;
+  opacity: 0.95;
 }
-
-#submit{
-    margin-bottom: 1em;
+#submit {
+  margin-bottom: 1em;
 }
-
-#trainSchedule{
-    font-family: "coal_train","Times New Roman", Times, serif;
-    background: #4D5FB3;
-    border-radius: 1rem;
-    color: #FFE7A1;
-    text-align: center;
-    margin-bottom: 1em;
-    padding-bottom: .25em;
+#trainSchedule {
+  font-family: "coal_train", "Times New Roman", Times, serif;
+  background: #4d5fb3;
+  border-radius: 1rem;
+  color: #ffe7a1;
+  text-align: center;
+  margin-bottom: 1em;
+  padding-bottom: 0.25em;
+  opacity: 0.9;
 }
-
-#table{
-    font-family: Arial, Helvetica, sans-serif
+#table {
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-.form-control{
-    font-family: Arial, Helvetica, sans-serif
+.form-control {
+  font-family: Arial, Helvetica, sans-serif;
 }
-#welcome{
-    background: #FF9751;
-    border-radius: 1rem;
-    margin-bottom: 1em;
-    padding: 1em;
-    color: #4D5FB3;
+#welcome {
+  background: #ff9751;
+  border-radius: 1rem;
+  margin-bottom: 1em;
+  padding: 1em;
+  color: #4d5fb3;
+  opacity: 0.9;
 }
-.footer{
-    margin-top: 1em;
-    color: white;
+.footer {
+  margin-top: 1em;
+  color: white;
 }

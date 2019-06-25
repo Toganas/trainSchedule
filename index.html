@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <!-- opening part of the page.  Kinda cheesy, but reminded of Aristocats, so clickety clack -->
     <div class="container" id="welcome">
         <div class="row justify-content-center">
             <img src="assets/images/giphy.gif" alt="Fast Train" height="200em">
@@ -28,8 +29,9 @@
                 Welcome to the Train Depot.  Feel free to look for the next arriving train or add a train if you know of one that we missed!  Thanks!
             </div>
         </div>
-
     </div>
+
+    <!-- displaying the train schedule -->
     <div class="container" id="trainSchedule">
         <div class="row">
             <div class="col-12 text-center h1">
@@ -39,6 +41,7 @@
         <table class="table table-dark" id="table">
             <thead>
                 <tr>
+                    <!-- headers for the table to hold the schedule -->
                     <th scope="col">Train Name</th>
                     <th scope="col">Destination</th>
                     <th scope="col">Frequency (min)</th>
@@ -47,13 +50,12 @@
                 </tr>
             </thead>
             <tbody id="schedule">
-
+                <!-- location that the table will be filled in from firebase/javascript -->
             </tbody>
-
         </table>
     </div>
 
-
+    <!-- form to add trains to the schedule, as they all have labels, seems a little redundant to comment them -->
     <div class="container" id="addTrains">
         <div class="row">
             <div class="col-12 text-center h2">
@@ -63,35 +65,33 @@
         <div class="row">
             <div class="col-12">
                 <form id="trainForm">
+
                     <div class="form-group">
                         <label>Train Name</label>
                         <input type="text" class="form-control" name="trainName">
                     </div>
+
                     <div class="form-group">
                         <label>Destination</label>
                         <input type="text" class="form-control" name="destination">
                     </div>
+
                     <div class="form-group">
                         <label>First Train Time (HH:mm - military time)</label>
                         <input type="text" class="form-control" name="firstTrain">
                     </div>
+
                     <div class="form-group">
                         <label>Frequency (min)</label>
                         <input type="text" class="form-control" name="frequency">
                     </div>
 
-
-
-
                     <button type="submit" id="submit">Submit</button>
                 </form>
-
-
-
             </div>
         </div>
-
     </div>
+
     <div class="footer text-center">Copyright© 2019</div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -106,5 +106,4 @@
     <!-- custom javascript -->
     <script src="assets/js/app.js"></script>
 </body>
-
 </html>
