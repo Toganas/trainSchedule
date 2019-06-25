@@ -71,27 +71,34 @@ $("#trainForm").on("submit", function (event) {
 
 database.ref().on('child_added', function (response) {
     console.log(response.val())
-    var name = (response.val().name)
-    console.log(name);
-    var destination = (response.val().destination)
-    console.log(destination);
-    var frequency = (response.val().frequency)
-    console.log(frequency);
-    
-    for (var i = 0; i < database.ref().length; i++) {
-        console.log(response[i].val.name);
-        // $("#schedule").html(`
-        // <tr>
-        // <th scope="row">${name}</th>
-        // <td>${destination}</td>
-        // <td>${frequency}</td>
-        // </tr>
+
+    // Attempt to append schedule
+    // $("<td>").text(response.val().name);
+    $("#schedule").append("<tr>" + "<td>" + response.val().name + "</td>" + "<td>" + response.val().destination + "</td>" + "<td>" + response.val().frequency + "</td>" + "</tr>")
+
+    // Does not work
+    // for (var i = 0; i < response.length; i++) {
+    //     console.log(response[i].name);
+    // $("#schedule").html(`
+    // <tr>
+    // <th scope="row">${name}</th>
+    // <td>${destination}</td>
+    // <td>${frequency}</td>
+    // </tr>
     //  `)
     // }
+    // Will a forEach function work instead?
+    // response.val().forEach(myFunction);
+
+    // function myFunction(name, trainName){
+
+
+    // }
+
     //use moment js to calculate arrival 
 
     //table
     //tr
     //td 
     //empty-div
-}})
+})
