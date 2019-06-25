@@ -72,34 +72,35 @@ $("#trainForm").on("submit", function (event) {
 database.ref().on('child_added', function (response) {
     console.log(response.val())
     // making frequency a var to use in moment.js
-    var freq=response.val().frequency;
+    var freq = response.val().frequency;
     console.log("frequency: " + freq);
     // grabbing the current time
-    var currentTime=moment();
+    var currentTime = moment();
     console.log("current Time: " + moment(currentTime).format("hh:mm"));
     // first Train 
-    var firstTrain=response.val().first;
-    console.log("first Train: "+firstTrain);
+    var firstTrain = response.val().first;
+    console.log("first Train: " + firstTrain);
     // making sure first train was earlier than the current time
-    var firstTrainEarly = moment(firstTrain, "HH:mm").subtract(1,"years");
-    console.log("1 year ago: "+firstTrainEarly);
+    var firstTrainEarly = moment(firstTrain, "HH:mm").subtract(1, "years");
+    console.log("1 year ago: " + firstTrainEarly);
     // difference between the first train and the current time
     var difference = moment().diff(moment(firstTrainEarly), "minutes");
-    console.log("Difference in time "+difference);
+    console.log("Difference in time " + difference);
     // Time apart
     var timeApart = difference % freq;
     console.log(timeApart);
     // next Train
     var nextTrain = freq - timeApart;
-    console.log("Minutes till next train "+nextTrain);
+    console.log("Minutes till next train " + nextTrain);
 
     // arrival time
     var arrival = moment().add(nextTrain, "minutes");
-    console.log("Arrival "+moment(arrival).format("hh:mm"));
+    console.log("Arrival " + moment(arrival).format("hh:mm"));
 
     // append schedule
-    
-    $("#schedule").append("<tr>" + "<td>" + response.val().name + "</td>" + "<td>" + response.val().destination + "</td>" + "<td>" + response.val().frequency + "</td>" + "<td>" + moment(arrival).format('hh:mm')+"</td>"+"<td>"+nextTrain+"</td>"+ "</tr>");
+
+    $("#schedule").append("<tr>" + "<td>" + response.val().name + "</td>" + "<td>" + response.val().destination + "</td>" + "<td>" +
+    response.val().frequency + "</td>" + "<td>" + moment(arrival).format('hh:mm') + "</td>" + "<td>" + nextTrain + "</td>" + "</tr>");
 
     //use moment js to calculate arrival 
 
